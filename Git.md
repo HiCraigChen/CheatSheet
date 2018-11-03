@@ -3,6 +3,6 @@ Revert the status to last commit you have. (Maybe write a bunch of codes which i
 
 View file diff in git before commit
 If you want to see what you haven't git added yet:  
-`git diff myfile.txt`
+`git diff myfile.txt`  
 or if you want to see already added changes  
 `git diff --cached myfile.txt`
