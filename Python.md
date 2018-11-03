@@ -1,9 +1,9 @@
 Python Cheat Sheet
 
-In Python3, ImportError: module 'pip' has no attribute 'main' 
+In Python3, ImportError: module 'pip' has no attribute 'main'  
 `sudo python3 -m pip install <package name>`
 
-Connect Jupyter-Notebook to native Python3 kernel (Not anaconda python3 kernel)
+Connect Jupyter-Notebook to native Python3 kernel (Not anaconda python3 kernel)  
 ` vim /Users/{username}/Library/Jupyter/kernels/python3/kernel.json`
 ```
 {
@@ -99,9 +99,9 @@ string_decoded = base64.b64decode(string_encoded).decode('utf-8')
 # 'Hello World!'
 ```
 
-Image rotation
-Issue: The photo upload from iOS app can't store with the correct driection in AWS S3.
-Fix: Find EXIF in the picture and do some corresponding rotation. `image.auto_orient()` can easily fix this problem.
+Image rotation  
+Issue: The photo upload from iOS app can't store with the correct driection in AWS S3.  
+Fix: Find EXIF in the picture and do some corresponding rotation. `image.auto_orient()` can easily fix this problem.  
 ```
 from wand.image import Image
 with Image(blob=infile) as img:
@@ -124,7 +124,7 @@ with Image(blob=infile) as img:
 #exif:Orientation 1
 ```
 
-Deal with 'multipart/form-data' request from user in Lambda built by chalice.
+Deal with 'multipart/form-data' request from user in Lambda built by chalice.  
 Receive multiple files from http request in Python such as multiple json file, multiple picture.
 ```
 import cgi
@@ -149,11 +149,11 @@ def upload():
 # {filename1: data1, filename2:data2, ...}
 ```
 
-`import request` Error when deploy Python app in lambda using chalice, using the following package instead
+`import request` Error when deploy Python app in lambda using chalice, using the following package instead  
 `from botocore.vendored import requests`
 
 
-Deploy app in Lambda Chalice Error. `ImportError`: I can't load my own function from my script
+Deploy app in Lambda Chalice Error. `ImportError`: I can't load my own function from my script  
 1. Find out that the same import code in python2 can't load but in python3 it works
 2. Try to chage my native `$python` from python2 > python3
 3. Find the file in /usr/local/bin/. Delete the original python alias and make a copy of python3 alias and named it python
@@ -166,8 +166,8 @@ Deploy app in Lambda Chalice Error. `ImportError`: I can't load my own function 
 10. uncomment the export = /usr/bin temperately in `~/.bash_profile`
 
 
-Receive Weird Bytes from picture via http request in python
-The first bytes showing `\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\x00\x10JFIF`
+Receive Weird Bytes from picture via http request in python  
+The first bytes showing `\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\x00\x10JFIF`  
 `\xef\xbf\xbd` is replacing unknown character with "? in a square".
 
 ```
