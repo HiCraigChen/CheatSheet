@@ -1,4 +1,4 @@
-In Python3, `ImportError: module 'pip' has no attribute 'main'  `
+In Python3, `ImportError: module 'pip' has no attribute 'main'`  
 `sudo python3 -m pip install <package name>`
 
 Connect Jupyter-Notebook to native Python3 kernel (Not anaconda python3 kernel)  
