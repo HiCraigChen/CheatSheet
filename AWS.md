@@ -18,7 +18,7 @@ sudo n stable
 
 DynamoDB saves float number `-3.19` with `Decimal('-3.19')`  
 Save the number with `decimal.Decimal(str(number))` instead of number  
-Then, we will recieve Decimal('-3.19') when we try to get the number from DynomalDB
+Then, we will recieve Decimal('-3.19') when we try to get the number from DynamoDB
 ```
 from decimal import Decimal
 data = {"name":"John","salary":123.45}
