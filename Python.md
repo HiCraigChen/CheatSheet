@@ -151,7 +151,7 @@ def upload():
 `from botocore.vendored import requests`
 
 
-Deploy app in Lambda Chalice Error. `ImportError`: I can't load my own function from my script  
+Deploy app in Lambda Chalice Error. `ImportError` I can't load my own function from my script  
 1. Find out that the same import code in python2 can't load but in python3 it works
 2. Try to chage my native `$python` from python2 > python3
 3. Find the file in /usr/local/bin/. Delete the original python alias and make a copy of python3 alias and named it python
@@ -173,4 +173,13 @@ response = requests.get(url).text
 # get werid bytes \xef\xbf\xbd from picture which means the picture is distorted
 response = requests.get(url).content
 # get \xff\xd8\xff which is representing .jpg file
+```
+
+Get the depth of a dictionary  
+```
+def depth(d, level=1):
+    """Get the Depth of data dict"""
+    if not isinstance(d, dict) or not d:
+        return level
+    return max(depth(d[k], level + 1) for k in d)
 ```
