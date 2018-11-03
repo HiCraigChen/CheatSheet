@@ -1,4 +1,4 @@
-#Get the option value which selected from user
+**Get the option value which selected from user**
 ```
 <select id="userOption">
   <option value="1">test1</option>
