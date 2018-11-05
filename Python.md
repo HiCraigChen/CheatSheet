@@ -183,3 +183,23 @@ def depth(d, level=1):
         return level
     return max(depth(d[k], level + 1) for k in d)
 ```
+
+`PolicyError` when read PDF file from wand.image
+```
+from wand.image import Image
+with Image(filename="PDF.pdf",resolution=300) as img_pdf:
+    num_pages = len(img_pdf.sequence)
+    for page, img in enumerate(img_pdf.sequence):
+        img_page = Image(image=img)
+        img_page.resize(900,1200)
+        img_page.save(filename="file"+str(page)+".jpg")
+
+PolicyError: not authorized `PDF'`
+```
+Go to `/usr/local/Cellar/imagemagick@6/6.9.10-11_1/etc/ImageMagick-6/policy.xml`  
+Add `<policy domain="coder" rights="read" pattern="PDF" />` under `<policymap>`  
+
+After that, I encountered another Error: ```DelegateError: FailedToExecuteCommand `'gs'```
+What I did is to install ghostscript from the following link:
+https://wiki.scribus.net/canvas/Installation_and_Configuration_of_Ghostscript#Installing_Ghostscript_on_Mac_OS_X
+
